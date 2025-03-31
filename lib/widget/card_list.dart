@@ -32,11 +32,11 @@ class _CardListWidgetState extends State<CardListWidget> {
           ),
         ),
         Align(
-          alignment: AlignmentDirectional(0, 1),
+          alignment: const AlignmentDirectional(0, 1),
           child: Container(
             width: 356.4,
             height: 244.3,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Color(0x0014181B),
             ),
             child: ListView(
