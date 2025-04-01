@@ -10,10 +10,10 @@ class MainLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppHeader(), // <app-header />
+      appBar: const AppHeader(),
       backgroundColor: const Color(0xFF1D2428),
-      body: body, // <router-outlet /> (conteúdo dinâmico)
-      bottomNavigationBar: const AppFooter(), // <app-footer />
+      body: body,
+      bottomNavigationBar: const AppFooter(),
     );
   }
 }

@@ -14,7 +14,7 @@ class AppFooter extends StatelessWidget {
       child: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          BottomNavItem(icon: Icons.home, label: 'Início'),
+          BottomNavItem(icon: Icons.home, label: 'Início', selected: true),
           BottomNavItem(icon: Icons.grid_on_sharp, label: 'Opções'),
           BottomNavItem(icon: Icons.list_alt, label: 'Atividade'),
           BottomNavItem(icon: Icons.person, label: 'Conta'),

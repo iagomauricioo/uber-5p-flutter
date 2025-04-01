@@ -17,7 +17,7 @@ class PlaceItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(15),
         border: Border.all(
           color: CustomTheme.alternate,
           width: 2,
@@ -38,7 +38,7 @@ class PlaceItem extends StatelessWidget {
                   height: 40,
                   decoration: BoxDecoration(
                     color: CustomTheme.alternate,
-                    borderRadius: BorderRadius.circular(6),
+                    borderRadius: BorderRadius.circular(10),
                   ),
                   alignment: Alignment.center,
                   child: Icon(
