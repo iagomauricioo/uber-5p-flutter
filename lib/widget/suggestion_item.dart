@@ -6,12 +6,18 @@ class SuggestionItem extends StatelessWidget {
   final IconData icon;
   final String label;
   final String? badgeText; // Texto opcional para rótulo (ex: "Promo")
+  final double? width;
+  final double? height;
+  final double? iconSize;
 
   const SuggestionItem({
     super.key,
     required this.icon,
     required this.label,
     this.badgeText,
+    this.width,
+    this.height,
+    this.iconSize,
   });
 
   @override
@@ -20,8 +26,8 @@ class SuggestionItem extends StatelessWidget {
       alignment: Alignment.topCenter,
       children: [
         Container(
-          width: 100,
-          height: 100,
+          width: width ?? 100,
+          height: height ?? 100,
           decoration: BoxDecoration(
             color: CustomTheme.secondaryBackground,
             borderRadius: BorderRadius.circular(16),
@@ -29,7 +35,7 @@ class SuggestionItem extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(icon, color: CustomTheme.primaryText, size: 24),
+              Icon(icon, color: CustomTheme.primaryText, size: iconSize ?? 24),
               Text(label, style: CustomTextStyle.bodyMedium),
             ],
           ),
