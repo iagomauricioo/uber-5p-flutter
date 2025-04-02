@@ -142,7 +142,7 @@ class _SearchInputState extends State<SearchInput> {
                       height: 40,
                       child: VerticalDivider(
                         thickness: 1,
-                        color: CustomTheme.secondaryBackground,
+                        color: Colors.white12,
                       ),
                     ),
                     GestureDetector(

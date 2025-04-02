@@ -24,7 +24,7 @@ class AccountHeader extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Mozart Melo',
                   style: TextStyle(
                       fontSize: 32,
@@ -32,24 +32,33 @@ class AccountHeader extends StatelessWidget {
                       fontWeight: FontWeight.w800),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.star_rounded,
-                        color: Colors.grey,
-                        size: 24,
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
-                        child: Text(
-                          '4.85',
-                          style: CustomTextStyle.bodyMedium,
+                      Container(
+                        decoration: const BoxDecoration(
+                          color: CustomTheme.alternate,
+                        ),
+                        child: const Row(
+                          children: [
+                            Icon(
+                              Icons.star_rounded,
+                              color: Colors.yellowAccent,
+                              size: 24,
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
+                              child: Text(
+                                '4.85',
+                                style: CustomTextStyle.bodyMedium,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                         child: Text(
                           '(1074 avaliações)',
