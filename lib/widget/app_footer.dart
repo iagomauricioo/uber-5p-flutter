@@ -4,15 +4,19 @@ import 'package:novo_uber_flutter/widget/bottom_navigation.dart';
 import '../screens/my_home_page.dart';
 
 class AppFooter extends StatefulWidget {
-  final VoidCallback onContaPressed;
   final VoidCallback onInicioPressed;
+  final VoidCallback onOpcoesPressed;
+  final VoidCallback onAtividadePressed;
+  final VoidCallback onContaPressed;
   final int currentIndex;
 
   const AppFooter(
       {
         super.key,
-        required this.onContaPressed,
         required this.onInicioPressed,
+        required this.onOpcoesPressed,
+        required this.onAtividadePressed,
+        required this.onContaPressed,
         required this.currentIndex
       });
 
@@ -26,6 +30,12 @@ class _AppFooterState extends State<AppFooter> {
       widget.onInicioPressed();
     }
     if (index == 2) {
+      widget.onOpcoesPressed();
+    }
+    if (index == 3) {
+      widget.onAtividadePressed();
+    }
+    if (index == 4) {
       widget.onContaPressed();
     }
   }
@@ -48,18 +58,18 @@ class _AppFooterState extends State<AppFooter> {
           BottomNavItem(
               icon: Icons.grid_on_sharp,
               label: 'Opções',
-              selected: widget.currentIndex == 1,
-              onTap: () => _onItemTapped(1)),
+              selected: widget.currentIndex == 2,
+              onTap: () => _onItemTapped(2)),
           BottomNavItem(
               icon: Icons.list_alt,
               label: 'Atividade',
-              selected: widget.currentIndex == 1,
-              onTap: () => _onItemTapped(1)),
+              selected: widget.currentIndex == 3,
+              onTap: () => _onItemTapped(3)),
           BottomNavItem(
               icon: Icons.person,
               label: 'Conta',
-              selected: widget.currentIndex == 2,
-              onTap: () => _onItemTapped(2)),
+              selected: widget.currentIndex == 4,
+              onTap: () => _onItemTapped(4)),
         ],
       ),
     );

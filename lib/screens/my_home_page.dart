@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:novo_uber_flutter/screens/atividade_screen.dart';
 import 'package:novo_uber_flutter/screens/conta_screen.dart';
+import 'package:novo_uber_flutter/screens/opces_screen.dart';
 import 'package:novo_uber_flutter/screens/viagens_screen.dart';
 import 'package:novo_uber_flutter/widget/custom_button.dart';
 import 'mercado_screen.dart';
@@ -15,17 +17,30 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int currentScreenIndex = 0;
 
-  void _onContaPressed() {
-    setState(() {
-      currentScreenIndex = 2;
-    });
-  }
-
   void _onInicioPressed() {
     setState(() {
       currentScreenIndex = 0;
     });
   }
+
+  void _onOpcoesPressed() {
+    setState(() {
+      currentScreenIndex = 2;
+    });
+  }
+
+  void _onAtividadePressed() {
+    setState(() {
+      currentScreenIndex = 3;
+    });
+  }
+
+  void _onContaPressed() {
+    setState(() {
+      currentScreenIndex = 4;
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -58,15 +73,20 @@ class _MyHomePageState extends State<MyHomePage> {
               children: const [
                 TelaViagens(),
                 TelaMercado(),
+                TelaOpcoes(),
+                TelaAtividade(),
                 TelaConta(),
               ],
             ),
           ),
         ],
       ),
+      onInicioPressed: _onInicioPressed,
+      onOpcoesPressed: _onOpcoesPressed,
+      onAtividadePressed: _onAtividadePressed,
       onContaPressed: _onContaPressed,
       currentScreenIndex: currentScreenIndex,
-      onInicioPressed: _onInicioPressed,
+
     );
   }
 }
