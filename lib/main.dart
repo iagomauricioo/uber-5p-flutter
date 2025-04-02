@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:novo_uber_flutter/screens/main_layout.dart';
 import 'package:novo_uber_flutter/screens/my_home_page.dart';
-import 'package:novo_uber_flutter/screens/teste.dart';
 
 void main() {
   //debugPaintSizeEnabled = true;
@@ -19,12 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MainLayout(
-        body: MyHomePage(), // <router-outlet /> (conteúdo dinâmico)
-      ),
+      home: const MyHomePage(), // <router-outlet /> (conteúdo dinâmico)
     );
   }
 }
-
-
-

@@ -1,8 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:novo_uber_flutter/widget/bottom_navigation.dart';
 
-class AppFooter extends StatelessWidget {
-  const AppFooter({super.key});
+class AppFooter extends StatefulWidget {
+  final VoidCallback onContaPressed;
+  final int currentIndex;
+
+  const AppFooter(
+      {super.key, required this.onContaPressed, required this.currentIndex});
+
+  @override
+  State<AppFooter> createState() => _AppFooterState();
+}
+
+class _AppFooterState extends State<AppFooter> {
+  void _onItemTapped(int index) {
+    if (index == 3) {
+      widget.onContaPressed();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -11,13 +26,29 @@ class AppFooter extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Colors.black12,
       ),
-      child: const Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          BottomNavItem(icon: Icons.home, label: 'Início', selected: true),
-          BottomNavItem(icon: Icons.grid_on_sharp, label: 'Opções'),
-          BottomNavItem(icon: Icons.list_alt, label: 'Atividade'),
-          BottomNavItem(icon: Icons.person, label: 'Conta'),
+          BottomNavItem(
+              icon: Icons.home,
+              label: 'Início',
+              selected: widget.currentIndex == 0,
+              onTap: () => _onItemTapped(0)),
+          BottomNavItem(
+              icon: Icons.grid_on_sharp,
+              label: 'Opções',
+              selected: widget.currentIndex == 10,
+              onTap: () => _onItemTapped(10)),
+          BottomNavItem(
+              icon: Icons.list_alt,
+              label: 'Atividade',
+              selected: widget.currentIndex == 11,
+              onTap: () => _onItemTapped(11)),
+          BottomNavItem(
+              icon: Icons.person,
+              label: 'Conta',
+              selected: widget.currentIndex == 2,
+              onTap: () => _onItemTapped(3)),
         ],
       ),
     );

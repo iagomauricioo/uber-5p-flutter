@@ -4,17 +4,27 @@ class BottomNavItem extends StatelessWidget {
   final IconData icon;
   final String label;
   final bool selected;
+  final VoidCallback onTap;
 
-  const BottomNavItem({super.key, required this.icon, required this.label, this.selected = false});
+  const BottomNavItem(
+      {super.key,
+      required this.icon,
+      required this.label,
+      this.selected = false,
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        selected ? Icon(icon, color: Colors.white, size: 30) : Icon(icon, color: Colors.grey, size: 28),
-        selected ? Text(label, style: const TextStyle(color: Colors.white)) : Text(label, style: const TextStyle(color: Colors.grey)),
-      ],
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, color: selected ? Colors.white : Colors.grey),
+          Text(label,
+              style: TextStyle(color: selected ? Colors.white : Colors.grey)),
+        ],
+      ),
     );
   }
 }

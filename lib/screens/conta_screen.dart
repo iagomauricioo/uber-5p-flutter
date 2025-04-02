@@ -29,8 +29,7 @@ class TelaConta extends StatelessWidget {
                   children: [
                     Text(
                       'Mozart Melo',
-                      style:
-                          CustomTextStyle.bodyMedium,
+                      style: CustomTextStyle.bodyMedium,
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
@@ -91,7 +90,7 @@ class TelaConta extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(24),
                     child: Image.asset(
-                      'assets/images/Captura_de_imagem_20250401_202922.png',
+                      'assets/images/mozart.png',
                       width: 200,
                       height: 200,
                       fit: BoxFit.cover,

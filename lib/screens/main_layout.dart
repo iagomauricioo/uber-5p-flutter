@@ -4,8 +4,15 @@ import 'package:novo_uber_flutter/widget/app_header.dart';
 
 class MainLayout extends StatelessWidget {
   final Widget body;
+  final VoidCallback onContaPressed;
+  final int currentScreenIndex;
 
-  const MainLayout({super.key, required this.body});
+  const MainLayout({
+    super.key,
+    required this.body,
+    required this.onContaPressed,
+    required this.currentScreenIndex,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +20,10 @@ class MainLayout extends StatelessWidget {
       appBar: const AppHeader(),
       backgroundColor: const Color(0xFF1D2428),
       body: body,
-      bottomNavigationBar: const AppFooter(),
+      bottomNavigationBar: AppFooter(
+        onContaPressed: onContaPressed, // Passa o callback recebido
+        currentIndex: currentScreenIndex,
+      ),
     );
   }
 }

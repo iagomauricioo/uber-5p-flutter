@@ -1,10 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:novo_uber_flutter/themes/CustomTextStyle.dart';
-import 'package:novo_uber_flutter/themes/CustomTheme.dart';
 import 'package:novo_uber_flutter/themes/DivideList.dart';
-import 'package:provider/provider.dart';
 
 import 'card_item.dart';
 
@@ -52,19 +49,22 @@ class _CardListWidgetState extends State<CardListWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         const TravelOptionCard(
-                          imageUrl: 'https://images.pexels.com/photos/27639789/pexels-photo-27639789/free-photo-of-noite-sombrio-escuro-carro.jpeg?auto=compress&cs=tinysrgb&w=600',
+                          imageUrl:
+                              'https://images.pexels.com/photos/27639789/pexels-photo-27639789/free-photo-of-noite-sombrio-escuro-carro.jpeg?auto=compress&cs=tinysrgb&w=600',
                           isNetworkImage: true,
                           title: 'Você escolhe',
                           description: 'Mais frio, sem papo? Você manda!',
                         ),
                         const TravelOptionCard(
-                          imageUrl: 'https://images.pexels.com/photos/30463342/pexels-photo-30463342/free-photo-of-taxi-uber-amarelo-na-rua-urbana.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                          imageUrl:
+                              'https://images.pexels.com/photos/30463342/pexels-photo-30463342/free-photo-of-taxi-uber-amarelo-na-rua-urbana.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                           isNetworkImage: true,
                           title: 'Carros mais novos',
                           description: 'E mais espaço para suas pernas',
                         ),
                         const TravelOptionCard(
-                          imageUrl: 'https://images.pexels.com/photos/9260061/pexels-photo-9260061.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                          imageUrl:
+                              'https://images.pexels.com/photos/9260061/pexels-photo-9260061.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                           isNetworkImage: true,
                           title: 'Bem avaliados',
                           description: 'Moristas parceiros com mais ⭐',

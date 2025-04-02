@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:novo_uber_flutter/themes/CustomTextStyle.dart';
 import 'package:novo_uber_flutter/themes/CustomTheme.dart';
-import 'package:novo_uber_flutter/themes/DivideList.dart';
 
 class TravelOptionCard extends StatelessWidget {
   final String imageUrl;
@@ -74,10 +73,8 @@ class TravelOptionCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Text(
               description,
-              style: CustomTextStyle.bodyMedium.copyWith(
-                fontSize: 14,
-                color: Colors.grey
-              ),
+              style: CustomTextStyle.bodyMedium
+                  .copyWith(fontSize: 14, color: Colors.grey),
               maxLines: 2, // Limita a 2 linhas
               overflow: TextOverflow.ellipsis, // Adiciona "..." se overflow
             ),
