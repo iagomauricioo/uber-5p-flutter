@@ -12,7 +12,7 @@ class AccountOptions extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          width: 410,
+          width: MediaQuery.of(context).size.width * 0.95,
           height: 188.9,
           decoration: const BoxDecoration(
             color: CustomTheme.primaryColor,
@@ -28,21 +28,21 @@ class AccountOptions extends StatelessWidget {
                   SuggestionItem(
                       icon: Icons.donut_large,
                       label: 'Ajuda',
-                      width: 120,
+                      width: 113,
                       height: 100,
                       iconSize: 26,
                   ),
                   SuggestionItem(
                       icon: Icons.wallet,
                       label: 'Carteira',
-                      width: 120,
+                      width: 113,
                       height: 100,
                       iconSize: 26,
                   ),
                   SuggestionItem(
                       icon: Icons.local_activity,
                       label: 'Atividades',
-                      width: 120,
+                      width: 113,
                       height: 100,
                       iconSize: 26,
                   ),

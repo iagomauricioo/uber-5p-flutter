@@ -21,6 +21,12 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _onInicioPressed() {
+    setState(() {
+      currentScreenIndex = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MainLayout(
@@ -60,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       onContaPressed: _onContaPressed,
       currentScreenIndex: currentScreenIndex,
+      onInicioPressed: _onInicioPressed,
     );
   }
 }
