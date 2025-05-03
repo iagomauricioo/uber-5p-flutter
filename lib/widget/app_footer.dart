@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:novo_uber_flutter/widget/bottom_navigation.dart';
 
-import '../screens/my_home_page.dart';
-
 class AppFooter extends StatefulWidget {
   final VoidCallback onInicioPressed;
   final VoidCallback onOpcoesPressed;
@@ -11,14 +9,12 @@ class AppFooter extends StatefulWidget {
   final int currentIndex;
 
   const AppFooter(
-      {
-        super.key,
-        required this.onInicioPressed,
-        required this.onOpcoesPressed,
-        required this.onAtividadePressed,
-        required this.onContaPressed,
-        required this.currentIndex
-      });
+      {super.key,
+      required this.onInicioPressed,
+      required this.onOpcoesPressed,
+      required this.onAtividadePressed,
+      required this.onContaPressed,
+      required this.currentIndex});
 
   @override
   State<AppFooter> createState() => _AppFooterState();

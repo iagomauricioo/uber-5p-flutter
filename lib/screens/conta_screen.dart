@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:novo_uber_flutter/themes/CustomTextStyle.dart';
 import 'package:novo_uber_flutter/themes/CustomTheme.dart';
 import 'package:novo_uber_flutter/widget/account_footer.dart';
 import 'package:novo_uber_flutter/widget/account_header.dart';
@@ -16,6 +15,7 @@ class TelaConta extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          SizedBox(height: 24,),
           AccountHeader(),
           AccountOptions(),
           ColumnAccountOptions(),

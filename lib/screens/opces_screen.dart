@@ -7,7 +7,7 @@ class TelaOpcoes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text(
+      child: const Text(
         'Tela de opções!!!!!!!!!!!!!!!',
         style: TextStyle(color: CustomTheme.primaryText, fontSize: 30),
       ),

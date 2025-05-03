@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:novo_uber_flutter/themes/CustomTextStyle.dart';
 import 'package:novo_uber_flutter/themes/CustomTheme.dart';
 
 class AccountFooter extends StatelessWidget {
@@ -30,10 +28,7 @@ class AccountFooter extends StatelessWidget {
               title: Text(
                 title,
                 textAlign: TextAlign.start,
-                style: TextStyle(
-                    fontSize: 16,
-                    color: CustomTheme.primaryText
-                ),
+                style: TextStyle(fontSize: 16, color: CustomTheme.primaryText),
               ),
               dense: false,
             ),
