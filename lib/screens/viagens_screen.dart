@@ -30,7 +30,7 @@ class TelaViagens extends StatelessWidget {
               print(text);
             },
             onTap: () {
-              print('Campo de busca tocado');
+              Navigator.of(context).pushNamed('/solicitar');
             },
             hintText: 'Para onde?',
           ),

@@ -65,12 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      onInicioPressed: _onInicioPressed,
-      onOpcoesPressed: _onOpcoesPressed,
-      onAtividadePressed: _onAtividadePressed,
-      onContaPressed: _onContaPressed,
-      onInputPressed: _onInputPressed,
-      currentScreenIndex: currentScreenIndex,
     );
   }
 }

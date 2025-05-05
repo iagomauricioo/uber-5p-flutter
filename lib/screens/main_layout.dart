@@ -4,36 +4,61 @@ import 'package:novo_uber_flutter/widget/app_header.dart';
 
 class MainLayout extends StatelessWidget {
   final Widget body;
-  final VoidCallback onInicioPressed;
-  final VoidCallback onOpcoesPressed;
-  final VoidCallback onAtividadePressed;
-  final VoidCallback onContaPressed;
-  final VoidCallback onInputPressed;
-  final int currentScreenIndex;
 
   const MainLayout({
     super.key,
     required this.body,
-    required this.onInicioPressed,
-    required this.onOpcoesPressed,
-    required this.onAtividadePressed,
-    required this.onContaPressed,
-    required this.onInputPressed,
-    required this.currentScreenIndex,
   });
+
+  static const List<String> _routeNames = [
+    '/viagens',
+    '/opcoes',
+    '/atividade',
+    '/conta',
+  ];
+
+  int _getCurrentIndex(String? routeName) {
+    return _routeNames.indexWhere((r) => r == routeName);
+  }
+
+  void _onItemTapped(BuildContext context, int index) {
+    final targetRoute = _routeNames[index];
+    if (ModalRoute.of(context)?.settings.name != targetRoute) {
+      Navigator.pushReplacementNamed(context, targetRoute);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    final currentRoute = ModalRoute.of(context)?.settings.name;
+    final currentIndex = _getCurrentIndex(currentRoute);
+
     return Scaffold(
       appBar: const AppHeader(),
       backgroundColor: const Color(0xFF1D2428),
       body: body,
-      bottomNavigationBar: AppFooter(
-        onInicioPressed: onInicioPressed,
-        onOpcoesPressed: onOpcoesPressed,
-        onAtividadePressed: onAtividadePressed,
-        onContaPressed: onContaPressed,
-        currentIndex: currentScreenIndex,
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: currentIndex < 0 ? 0 : currentIndex,
+        onTap: (index) => _onItemTapped(context, index),
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Início',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.grid_on_sharp),
+            label: 'Opções',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.list_alt),
+            label: 'Atividade',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Conta',
+          ),
+        ],
       ),
     );
   }

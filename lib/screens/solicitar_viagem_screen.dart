@@ -17,16 +17,19 @@ class SolicitarViagemScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.max,
         children: [
-          const Row(
+          Row(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(
-                Icons.arrow_back,
-                color: CustomTheme.primaryText,
-                size: 30,
+              IconButton(
+                onPressed: () => Navigator.of(context).pop(),
+                icon: Icon(
+                  Icons.arrow_back,
+                  color: CustomTheme.primaryText,
+                  size: 30,
+                ),
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 24),
                 child: Text(
                   'Planeje sua próxima viagem',
