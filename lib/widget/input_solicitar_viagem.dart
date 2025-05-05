@@ -15,12 +15,14 @@ class _InputSolicitarViagemState extends State<InputSolicitarViagem> {
   final TextEditingController textController2 = TextEditingController();
   final FocusNode destinoFocusNode = FocusNode();
 
+
+
   @override
   void initState() {
     super.initState();
     // Dá foco automático no segundo campo após o build
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      destinoFocusNode.requestFocus();
+      FocusScope.of(context).requestFocus(destinoFocusNode);
     });
   }
 
@@ -87,6 +89,7 @@ class _InputSolicitarViagemState extends State<InputSolicitarViagem> {
                 children: [
                   Expanded(
                     child: TextFormField(
+                      focusNode: destinoFocusNode,
                       controller: textController2,
                       decoration: const InputDecoration(
                         hintText: 'Para onde você vai?',

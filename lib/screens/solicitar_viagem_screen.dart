@@ -3,6 +3,8 @@ import 'package:novo_uber_flutter/themes/CustomTheme.dart';
 import 'package:novo_uber_flutter/widget/button_select.dart';
 import 'package:novo_uber_flutter/widget/input_solicitar_viagem.dart';
 
+import '../widget/corridas_recentes.dart';
+
 class SolicitarViagemScreen extends StatelessWidget {
   const SolicitarViagemScreen({super.key});
 
@@ -49,8 +51,95 @@ class SolicitarViagemScreen extends StatelessWidget {
             ),
           ),
           InputSolicitarViagem(),
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              primary: false,
+              shrinkWrap: true,
+              children: [
+                _buildCorridaItem(
+                  'Campus II - Cesmac - Edifício Dr. Alberto Antunes',
+                  'R. da Harmonia, 918 - Farol - Maceió - AL, 57081-350',
+                  Icons.watch_later,
+                ),
+                _buildCorridaItem(
+                  'Rodoviária Interestadual de Maceió João Paulo II',
+                  'Feitosa - Maceió - AL',
+                  Icons.watch_later,
+                ),
+                _buildCorridaItem(
+                  'Campus II - Cesmac - Edifício Dr. Alberto Antunes',
+                  'R. da Harmonia, 918 - Farol - Maceió - AL, 57081-350',
+                  Icons.watch_later,
+                ),
+                _buildCorridaItem(
+                  'Rodoviária Interestadual de Maceió João Paulo II',
+                  'Feitosa - Maceió - AL',
+                  Icons.watch_later,
+                ),
+                _buildCorridaItem(
+                  'Campus II - Cesmac - Edifício Dr. Alberto Antunes',
+                  'R. da Harmonia, 918 - Farol - Maceió - AL, 57081-350',
+                  Icons.watch_later,
+                ),
+                _buildCorridaItem(
+                  'Rodoviária Interestadual de Maceió João Paulo II',
+                  'Feitosa - Maceió - AL',
+                  Icons.watch_later,
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );
   }
+}
+
+Widget _buildCorridaItem(String endereco, String data, IconData icon) {
+  return Column(
+    children: [
+      Padding(
+        padding: const EdgeInsets.only(bottom: 12),
+        child: Container(
+          decoration: BoxDecoration(
+            boxShadow: const [
+              BoxShadow(
+                blurRadius: 3,
+                color: Color(0x10000000),
+                offset: Offset(0, 1),
+              ),
+            ],
+            borderRadius: BorderRadius.circular(12),
+          ),
+          padding: const EdgeInsets.all(12),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: 50,
+                height: 50,
+                child: Icon(icon, color: Colors.white, size: 28),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(endereco,
+                        style: const TextStyle(
+                            color: CustomTheme.primaryText, fontSize: 14)),
+                    Text(data,
+                        style: const TextStyle(
+                            color: CustomTheme.secondaryText, fontSize: 12)),
+                    const SizedBox(height: 4),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    ],
+  );
 }
