@@ -16,7 +16,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(), // <router-outlet /> (conteúdo dinâmico)
+      initialRoute: '/',
+      routes: {
+        '/': (_) => const MyHomePage(),
+      },
     );
   }
 }
