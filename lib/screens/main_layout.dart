@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:novo_uber_flutter/widget/app_footer.dart';
 import 'package:novo_uber_flutter/widget/app_header.dart';
 
+import '../themes/CustomTheme.dart';
+
 class MainLayout extends StatelessWidget {
   final Widget body;
 
@@ -39,7 +41,12 @@ class MainLayout extends StatelessWidget {
       body: body,
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        backgroundColor: CustomTheme.secondaryBackground,
         currentIndex: currentIndex < 0 ? 0 : currentIndex,
+        selectedItemColor: Colors.white,
+        // Cor dos ícones/texto selecionado
+        unselectedItemColor: Colors.white70,
+        // Cor dos ícones/texto não selecionado
         onTap: (index) => _onItemTapped(context, index),
         items: const [
           BottomNavigationBarItem(
