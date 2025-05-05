@@ -52,42 +52,45 @@ class SolicitarViagemScreen extends StatelessWidget {
           ),
           InputSolicitarViagem(),
           Expanded(
-            child: ListView(
-              padding: EdgeInsets.zero,
-              primary: false,
-              shrinkWrap: true,
-              children: [
-                _buildCorridaItem(
-                  'Campus II - Cesmac - Edifício Dr. Alberto Antunes',
-                  'R. da Harmonia, 918 - Farol - Maceió - AL, 57081-350',
-                  Icons.watch_later,
-                ),
-                _buildCorridaItem(
-                  'Rodoviária Interestadual de Maceió João Paulo II',
-                  'Feitosa - Maceió - AL',
-                  Icons.watch_later,
-                ),
-                _buildCorridaItem(
-                  'Campus II - Cesmac - Edifício Dr. Alberto Antunes',
-                  'R. da Harmonia, 918 - Farol - Maceió - AL, 57081-350',
-                  Icons.watch_later,
-                ),
-                _buildCorridaItem(
-                  'Rodoviária Interestadual de Maceió João Paulo II',
-                  'Feitosa - Maceió - AL',
-                  Icons.watch_later,
-                ),
-                _buildCorridaItem(
-                  'Campus II - Cesmac - Edifício Dr. Alberto Antunes',
-                  'R. da Harmonia, 918 - Farol - Maceió - AL, 57081-350',
-                  Icons.watch_later,
-                ),
-                _buildCorridaItem(
-                  'Rodoviária Interestadual de Maceió João Paulo II',
-                  'Feitosa - Maceió - AL',
-                  Icons.watch_later,
-                ),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+              child: ListView(
+                padding: EdgeInsets.zero,
+                primary: false,
+                shrinkWrap: true,
+                children: [
+                  _buildCorridaItem(
+                    'Campus II - Cesmac - Edifício Dr. Alberto Antunes',
+                    'R. da Harmonia, 918 - Farol - Maceió - AL, 57081-350',
+                    Icons.watch_later,
+                  ),
+                  _buildCorridaItem(
+                    'Rodoviária Interestadual de Maceió João Paulo II',
+                    'Feitosa - Maceió - AL',
+                    Icons.watch_later,
+                  ),
+                  _buildCorridaItem(
+                    'Campus II - Cesmac - Edifício Dr. Alberto Antunes',
+                    'R. da Harmonia, 918 - Farol - Maceió - AL, 57081-350',
+                    Icons.watch_later,
+                  ),
+                  _buildCorridaItem(
+                    'Rodoviária Interestadual de Maceió João Paulo II',
+                    'Feitosa - Maceió - AL',
+                    Icons.watch_later,
+                  ),
+                  _buildCorridaItem(
+                    'Campus II - Cesmac - Edifício Dr. Alberto Antunes',
+                    'R. da Harmonia, 918 - Farol - Maceió - AL, 57081-350',
+                    Icons.watch_later,
+                  ),
+                  _buildCorridaItem(
+                    'Rodoviária Interestadual de Maceió João Paulo II',
+                    'Feitosa - Maceió - AL',
+                    Icons.watch_later,
+                  ),
+                ],
+              ),
             ),
           )
         ],
