@@ -2,11 +2,35 @@ import 'package:flutter/material.dart';
 
 import '../themes/CustomTheme.dart';
 
-class InputSolicitarViagem extends StatelessWidget {
-  final TextEditingController textController1 = TextEditingController();
-  final TextEditingController textController2 = TextEditingController();
+class InputSolicitarViagem extends StatefulWidget {
 
   InputSolicitarViagem({super.key});
+
+  @override
+  State<InputSolicitarViagem> createState() => _InputSolicitarViagemState();
+}
+
+class _InputSolicitarViagemState extends State<InputSolicitarViagem> {
+  final TextEditingController textController1 = TextEditingController();
+  final TextEditingController textController2 = TextEditingController();
+  final FocusNode destinoFocusNode = FocusNode();
+
+  @override
+  void initState() {
+    super.initState();
+    // Dá foco automático no segundo campo após o build
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      destinoFocusNode.requestFocus();
+    });
+  }
+
+  @override
+  void dispose() {
+    textController1.dispose();
+    textController2.dispose();
+    destinoFocusNode.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +41,7 @@ class InputSolicitarViagem extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: CustomTheme.primaryText,
-            width: 2,
+            width: 1,
           ),
         ),
         child: Column(
@@ -27,7 +51,7 @@ class InputSolicitarViagem extends StatelessWidget {
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                color: CustomTheme.secondaryText,
+                color: CustomTheme.secondaryBackground,
                 borderRadius:
                     const BorderRadius.vertical(top: Radius.circular(20)),
                 border: Border.all(
@@ -40,16 +64,17 @@ class InputSolicitarViagem extends StatelessWidget {
                 controller: textController1,
                 decoration: const InputDecoration(
                   hintText: 'Sua localização atual',
+                  hintStyle: TextStyle(color: CustomTheme.primaryText),
                   border: InputBorder.none,
                 ),
-                style: const TextStyle(fontSize: 14),
+                style: const TextStyle(fontSize: 14, color: CustomTheme.primaryText),
               ),
             ),
             // Campo "Para onde você vai?" com ícone "+"
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                color: CustomTheme.secondaryText,
+                color: CustomTheme.secondaryBackground,
                 borderRadius:
                     const BorderRadius.vertical(bottom: Radius.circular(20)),
                 border: Border.all(
@@ -65,9 +90,10 @@ class InputSolicitarViagem extends StatelessWidget {
                       controller: textController2,
                       decoration: const InputDecoration(
                         hintText: 'Para onde você vai?',
+                        hintStyle: TextStyle(color: CustomTheme.primaryText),
                         border: InputBorder.none,
                       ),
-                      style: const TextStyle(fontSize: 14),
+                      style: const TextStyle(fontSize: 14, color: CustomTheme.primaryText),
                     ),
                   ),
                   Container(

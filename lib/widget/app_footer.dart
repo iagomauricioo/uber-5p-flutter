@@ -54,18 +54,18 @@ class _AppFooterState extends State<AppFooter> {
           BottomNavItem(
               icon: Icons.grid_on_sharp,
               label: 'Opções',
-              selected: widget.currentIndex == 2,
-              onTap: () => _onItemTapped(2)),
+              selected: widget.currentIndex == 1,
+              onTap: () => _onItemTapped(1)),
           BottomNavItem(
               icon: Icons.list_alt,
               label: 'Atividade',
-              selected: widget.currentIndex == 3,
-              onTap: () => _onItemTapped(3)),
+              selected: widget.currentIndex == 2,
+              onTap: () => _onItemTapped(2)),
           BottomNavItem(
               icon: Icons.person,
               label: 'Conta',
-              selected: widget.currentIndex == 4,
-              onTap: () => _onItemTapped(4)),
+              selected: widget.currentIndex == 3,
+              onTap: () => _onItemTapped(3)),
         ],
       ),
     );
