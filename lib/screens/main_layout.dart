@@ -8,6 +8,7 @@ class MainLayout extends StatelessWidget {
   final VoidCallback onOpcoesPressed;
   final VoidCallback onAtividadePressed;
   final VoidCallback onContaPressed;
+  final VoidCallback onInputPressed;
   final int currentScreenIndex;
 
   const MainLayout({
@@ -17,6 +18,7 @@ class MainLayout extends StatelessWidget {
     required this.onOpcoesPressed,
     required this.onAtividadePressed,
     required this.onContaPressed,
+    required this.onInputPressed,
     required this.currentScreenIndex,
   });
 

@@ -25,13 +25,13 @@ class _AppFooterState extends State<AppFooter> {
     if (index == 0) {
       widget.onInicioPressed();
     }
-    if (index == 2) {
+    if (index == 1) {
       widget.onOpcoesPressed();
     }
-    if (index == 3) {
+    if (index == 2) {
       widget.onAtividadePressed();
     }
-    if (index == 4) {
+    if (index == 3) {
       widget.onContaPressed();
     }
   }
