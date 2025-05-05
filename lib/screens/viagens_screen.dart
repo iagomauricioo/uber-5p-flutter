@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:novo_uber_flutter/screens/solicitar_viagem_screen.dart';
 import 'package:novo_uber_flutter/widget/card_list_image_button.dart';
 
 import '../widget/card_list.dart';
@@ -13,7 +12,7 @@ class TelaViagens extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SolicitarViagemScreen(); /*SingleChildScrollView(
+    return SingleChildScrollView(
       child: Column(
         children: [
           const Row(
@@ -42,6 +41,6 @@ class TelaViagens extends StatelessWidget {
           const CardListImageButton(),
         ],
       ),
-    );*/
+    );
   }
 }
